@@ -29,7 +29,7 @@
         - in the loop we get the *id* of each element
         - next, convert this string form *id* into array elements stored in *arr* 
         - *arr.shift()* removes the 0th index element from the array
-            - note: all ids are starting from letter b eg b102, b302 etc, here we need to work using math operation so we need a to convert this string into a num hence we remove letter b from the above step
+          - note: all ids are starting from letter b eg b102, b302 etc, here we need to work using math operation so we need a to convert this string into a num hence we remove letter b from the above step
         - *arr.pop()* retrives the last element in the index eg. b102 => **102 pop() gives 2 which actually denotes the file (col no.)**
         - we again use shift() to get the 0th index now: **for 102 it will be 1 which denote the rank (row no.)**
         - and **a** is assigned **row+col**
