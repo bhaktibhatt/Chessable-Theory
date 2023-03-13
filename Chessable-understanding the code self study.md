@@ -1,7 +1,8 @@
-1. first regular chess game.
+### first regular chess game.
+1. Understanding Javascript 
     - refer 2-game.html and 2-game.css for static design of the 2-player chess game. 
-    - Understanding Javascript 
-        - let's first see coloring function the below code snippet defines the function
+    - let's first see coloring function the below code snippet defines the function.
+    1. coloring function
         ```
         function coloring() {
             const color = document.querySelectorAll('.box')
@@ -36,4 +37,4 @@
 
 
 
-    
+
