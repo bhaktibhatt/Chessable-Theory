@@ -37,29 +37,29 @@
 
     2. insertImage function
         - the below code snippet shows the insertImage function 
-    ```
-    function insertImage() {
-        document.querySelectorAll('.box').forEach(image => {
-            if (image.innerText.length !== 0) {
-                if (image.innerText == 'Wpawn' || image.innerText == 'Bpawn') {
-                    image.innerHTML = `${image.innerText}<img class='allimg allpawn' src="pieces/${image.innerText}.png"alt="">`
-                    image.style.cursor = 'pointer'
+        ```
+        function insertImage() {
+            document.querySelectorAll('.box').forEach(image => {
+                if (image.innerText.length !== 0) {
+                    if (image.innerText == 'Wpawn' || image.innerText == 'Bpawn') {
+                        image.innerHTML = `${image.innerText}<img class='allimg allpawn' src="pieces/${image.innerText}.png"alt="">`
+                        image.style.cursor = 'pointer'
+                        }
+                    else {
+                        image.innerHTML = `${image.innerText}<img class='allimg' src="pieces/${image.innerText}.png" alt="">`
+                        image.style.cursor = 'pointer'
                     }
-                else {
-                    image.innerHTML = `${image.innerText}<img class='allimg' src="pieces/${image.innerText}.png" alt="">`
-                    image.style.cursor = 'pointer'
                 }
-            }
-        })
-    }
-    insertImage()
-    ```
-    - This function is used to insert the image by using the innerText of the **list item** (refer 2-game.html)
-    - The first line in definition body selects all the elements which has the class **".box"** and pass each element as such in a array temp and consider each as **image** variable
-    - and for every image we define the foreach body
-    - If the inner Text's length is not equal to 0 as it can be the text in *<li>* tag in 2-game.html we go in if statement
-        - 1. if **image**'s innerText is Wpwan or Bpawn i.e (either a black pawn or white pawn) then,
-            change the inner text by adding the image in *<li>* using '${image.innerText}' this will keep the text i.e example **Bpawn** and a img tag with **Bpawn.png** file 
-        - 2. Same goes for the other pieces to be added using the text as the file name like Brook, Wqueen etc 
+            })
+        }
+        insertImage()
+        ```
+        - This function is used to insert the image by using the innerText of the **list item** (refer 2-game.html)
+            - The first line in definition body selects all the elements which has the class **".box"** and pass each element as such in a array temp and consider each as **image** variable
+        - and for every image we define the foreach body
+        - If the inner Text's length is not equal to 0 as it can be the text in *<li>* tag in 2-game.html we go in if statement
+            - 1. if **image**'s innerText is Wpwan or Bpawn i.e (either a black pawn or white pawn) then,
+                change the inner text by adding the image in *<li>* using '${image.innerText}' this will keep the text i.e example **Bpawn** and a img tag with **Bpawn.png** file 
+            - 2. Same goes for the other pieces to be added using the text as the file name like Brook, Wqueen etc 
 
 
