@@ -1,1 +1,2 @@
+first regular chess game.
 refer 2-game.html and 2-game.css for static design of the 2-player chess game. 
