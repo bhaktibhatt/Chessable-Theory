@@ -110,3 +110,23 @@
         hence both have innerText Wpawn
         cadetblueColor using ((Array.from(cadetblueText)).shift()).toString() we get the first letter of the innerText of i1(cadetblue), i2 (green).
         - If both are equal ie. W = W then we will then, we use this condition and also col, row num's sum ie. a if its even put dark blue else light blue. 
+    
+    4. checkpawn function
+        ```
+        function checkpawn(){
+            document.querySelectorAll('.box').forEach(checkpawn =>{
+                id=checkpawn.id
+                idnum = parseInt(id.substr(1,4))
+                if (checkpawn.innerText == 'Wpawn' && 800<idnum && idnum<809) {
+                    checkpawn.innerText = "Wqueen"
+                }
+                if (checkpawn.innerText == 'Bpawn' && 100<idnum && idnum<109) {
+                    checkpawn.innerText = "Bqueen"
+                }
+            })
+        }  
+        ```
+        - In this function we check whether each element is a pawn or no, if it is then we get its position by passing the id of the box ele.
+        -  if Wpawn ranges 800 to 809 i.e eighth row and any col then its promoted to Wqueen
+        - similary if Bpawn ranges to 100 to 109 then its promoted to Bqueen 
+    
