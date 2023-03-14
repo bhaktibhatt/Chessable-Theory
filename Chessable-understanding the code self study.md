@@ -62,4 +62,51 @@
                 change the inner text by adding the image in *<li>* using '${image.innerText}' this will keep the text i.e example **Bpawn** and a img tag with **Bpawn.png** file 
         - 2. Same goes for the other pieces to be added using the text as the file name like Brook, Wqueen etc 
 
+    3. reddish function
+        ```function reddish() {
+        document.querySelectorAll('.box').forEach(i1 => {
+            if (i1.style.backgroundColor == 'cadetblue') {
 
+                document.querySelectorAll('.box').forEach(i2 => {
+
+                    if (i2.style.backgroundColor == 'green' && i2.innerText.length !== 0) {
+
+
+                        greenText = i2.innerText
+
+                        cadetblueText = i1.innerText
+
+                        cadetblueColor = ((Array.from(cadetblueText)).shift()).toString()
+                        greenColor = ((Array.from(greenText)).shift()).toString()
+
+                        getId = i2.id
+                        arr = Array.from(getId)
+                        arr.shift()
+                        aside = eval(arr.pop())
+                        aup = eval(arr.shift())
+                        a = aside + aup
+
+                        if (a % 2 == 0 && cadetblueColor == greenColor) {
+                            i2.style.backgroundColor = '#8F9EB8'
+                        }
+                        if (a % 2 !== 0 && cadetblueColor == greenColor) {
+                            i2.style.backgroundColor = '#C3CDDC'
+                        }
+
+                        // if (cadetblueColor == greenColor) {
+                        //     i2.style.backgroundColor = 'rgb(253, 60, 60)'
+                        // }
+                    }
+                })
+            }
+        })
+        }   
+        ```
+        - this function will prevent from capturing same color elements.
+        - using i1 we iterate and check each .box element
+        - if i1 had bg 'cadetblue' then we take i2 to iterate through all .box element
+        - if i2 has color green and text is not null which means a possible move for the piece selected and there might a piece to be captured
+        - lets assume @ 202 there is Wpawn and @ 303 there a Wpawn a pawn can take one step diagonal, so 
+        hence both have innerText Wpawn
+        cadetblueColor using ((Array.from(cadetblueText)).shift()).toString() we get the first letter of the innerText of i1(cadetblue), i2 (green).
+        - If both are equal ie. W = W then we will then, we use this condition and also col, row num's sum ie. a if its even put dark blue else light blue. 
