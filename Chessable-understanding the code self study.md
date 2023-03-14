@@ -130,3 +130,50 @@
         -  if Wpawn ranges 800 to 809 i.e eighth row and any col then its promoted to Wqueen
         - similary if Bpawn ranges to 100 to 109 then its promoted to Bqueen 
     
+    5. Actual game iterated as foreach **'item'** i.e the item we click on.
+
+    ```
+    tog = 1
+    document.querySelectorAll('.box').forEach(item => {
+    item.addEventListener('click', function () {
+    ```
+    - we add a event listener click to all .box items
+    ```
+
+        // To delete the opposite element
+
+        if (item.style.backgroundColor == 'green' && item.innerText.length == 0) {
+            tog = tog + 1
+            setTimeout(flip, 800);
+        }
+        if (item.style.backgroundColor == 'yellow' && item.innerText.length == 0) {
+            tog = tog + 1
+            setTimeout(flip, 800);
+        }
+
+    ```
+    - if the background color is green (shows possible move for the piece) and the box has no text
+    - tog = tog + 1, after a successful move the board will be flipped using setTimeout(flip,800)
+    ```
+        
+        else if (item.style.backgroundColor == 'green' && item.innerText.length !== 0) {
+            
+            document.querySelectorAll('.box').forEach(i => {
+                if (i.style.backgroundColor == 'cadetblue') {
+                    cadetblueId = i.id
+                    cadetblueText = i.innerText
+                    
+                    document.getElementById(cadetblueId).innerText = ''
+                    item.innerText = cadetblueText
+                    coloring()
+                    insertImage()
+                    tog = tog + 1
+                    setTimeout(flip, 800);
+                    checkpawn()
+                    insertImage()
+                }
+
+            })
+        }
+    ```
+    - 
