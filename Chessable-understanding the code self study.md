@@ -155,7 +155,6 @@
     - if the background color is green (shows possible move for the piece) and the box has no text
     - tog = tog + 1, after a successful move the board will be flipped using setTimeout(flip,800)
     ```
-        
         else if (item.style.backgroundColor == 'green' && item.innerText.length !== 0) {
             
             document.querySelectorAll('.box').forEach(i => {
@@ -176,4 +175,4 @@
             })
         }
     ```
-    - 
+    - The above else statement check if there is a piece to be captured if yes then selected piece is cadetblueId we clear the innerText be setting it '' (null)  and set item's inner text i.e the captured piece as cadetblueId innerText and then filp the board
