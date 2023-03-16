@@ -170,9 +170,67 @@
                     setTimeout(flip, 800);
                     checkpawn()
                     insertImage()
+                    checkchecks()
                 }
 
             })
         }
     ```
     - The above else statement check if there is a piece to be captured if yes then selected piece is cadetblueId we clear the innerText be setting it '' (null)  and set item's inner text i.e the captured piece as cadetblueId innerText and then filp the board
+
+5. Function whosTurn, which will have all piece movement of each color the toggle variable will be either 'W' or 'B', for each piece we check who's turn.
+
+    ```
+    function whosTurn(toggle) 
+    ```
+    1. Pawn
+    ```
+    // PAWN
+    if (item.innerText == `${toggle}pawn`) {
+        checkchecks()
+        if (tog % 2 !== 0 && aup < 800) {
+            // For white side
+            if (aup == 200) {
+                //for pawn can move two squares on first move
+                if (document.getElementById(`b${a + 200}`).innerText.length==0 && document.getElementById(`b${a+100}`).innerText.length == 0) {
+                    document.getElementById(`b${a + 200}`).style.backgroundColor = 'green'
+                    }
+                }
+                if (document.getElementById(`b${a + 100}`).innerText.length == 0) {
+                    document.getElementById(`b${a + 100}`).style.backgroundColor = 'green'
+                }
+                if (document.getElementById(`b${a + 100 + 1}`) && document.getElementById(`b${a + 100 + 1}`).innerText.length!== 0) {
+                    document.getElementById(`b${a + 100 + 1}`).style.backgroundColor = 'green'
+                    }
+                    if (document.getElementById(`b${a + 100 - 1}`) && document.getElementById(`b${a + 100 - 1}`).innerText.length !== 0) {
+                        document.getElementById(`b${a + 100 - 1}`).style.backgroundColor = 'green'
+                        }
+                    }
+
+                if (tog % 2 == 0 && aup > 100) {
+                    // For black side
+                    if (aup == 700) {
+                        //for pawn can move two squares on first move
+                        if (document.getElementById(`b${a - 200}`).innerText.length == 0 && document.getElementById(`b${a - 100}`).innerText.length == 0) {
+                            document.getElementById(`b${a - 200}`).style.backgroundColor = 'green'
+                        }
+                    }
+                    if (document.getElementById(`b${a - 100}`).innerText.length == 0) {
+                        document.getElementById(`b${a - 100}`).style.backgroundColor = 'green'
+                    }
+                    if (document.getElementById(`b${a - 100 + 1}`) && document.getElementById(`b${a - 100 + 1}`).innerText.length !== 0) {
+                        document.getElementById(`b${a - 100 + 1}`).style.backgroundColor = 'green'
+                    }
+                    if (document.getElementById(`b${a - 100 - 1}`) && document.getElementById(`b${a - 100 - 1}`).innerText.length !== 0) {
+                        document.getElementById(`b${a - 100 - 1}`).style.backgroundColor = 'green'
+
+                    }
+                }
+
+                item.style.backgroundColor = 'cadetblue'
+                reddish()
+                    
+            }
+    ```
+
+
